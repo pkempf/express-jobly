@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://our.company.com/companyGet.schema.json",
+  "type": "object",
+  "examples": [
+    {
+      "nameLike": "ACME",
+      "minEmployees": 20,
+      "maxEmployees": 100
+    }
+  ],
+  "properties": {
+    "nameLike": {
+      "$id": "#/properties/nameLike",
+      "type": "string",
+      "title": "The nameLike schema",
+      "description": "A string; GET companies whose names contain this string",
+      "default": "",
+      "examples": ["ACME"]
+    },
+    "minEmployees": {
+      "$id": "#/properties/minEmployees",
+      "type": "integer",
+      "title": "The minEmployees schema",
+      "description": "An integer; GET companies with at least this many employees",
+      "default": 0,
+      "examples": [20],
+      "exclusiveMinimum": 0
+    },
+    "maxEmployees": {
+      "$id": "#/properties/maxEmployees",
+      "type": "integer",
+      "title": "The maxEmployees schema",
+      "description": "An integer; GET companies with at most this many employees",
+      "default": 0,
+      "examples": [100],
+      "exclusiveMinimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://our.company.com/jobGet.schema.json",
+  "type": "object",
+  "examples": [
+    {
+      "title": "Engineer",
+      "minSalary": 50000,
+      "hasEquity": true
+    }
+  ],
+  "properties": {
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "The title schema",
+      "description": "A string; GET jobs whose titles contain this string",
+      "default": "",
+      "examples": ["Engineer"],
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "minSalary": {
+      "$id": "#/properties/minSalary",
+      "type": "integer",
+      "title": "The minSalary schema",
+      "description": "An integer; GET jobs which pay at least this much",
+      "default": 0,
+      "examples": [50000, 20000, 0],
+      "minimum": 0
+    },
+    "hasEquity": {
+      "$id": "#/properties/maxEmployees",
+      "type": "boolean",
+      "title": "The hasEquity schema",
+      "description": "An boolean; GET jobs which [do/do not] have equity",
+      "examples": [true]
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}
